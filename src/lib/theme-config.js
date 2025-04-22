@@ -72,7 +72,7 @@ export const themeConfig = {
         image: "#",
         link: "#",
         github: "#",
-        technologies: ["Java", "IA", "Algorithmique"],
+        technologies: ["HTML", "CSS"],
         features: [
           "Interface graphique intuitive",
           "IA basée sur l'algorithme minimax",
