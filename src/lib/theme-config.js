@@ -129,17 +129,17 @@ export const themeConfig = {
       {
         id: 7,
         title: "Social Network",
-        description: "Développement d'un moteur d'échecs en Java avec intelligence artificielle capable d'analyser et de jouer des parties complètes.",
-        longDescription: "Ce projet consistait à développer un moteur d'échecs complet en Java, incluant une interface graphique et une intelligence artificielle. L'IA utilise l'algorithme minimax avec élagage alpha-bêta pour déterminer les meilleurs coups possibles. Le projet comprend également une notation complète des parties et la possibilité de rejouer des matchs célèbres.",
+        description: "DPlateforme sociale moderne permettant aux utilisateurs de publier des messages, partager des photos, suivre d'autres membres et interagir dans un environnement fluide et responsive.",
+        longDescription: "SocialNetwork SocialConnect est une application web de réseau social conçue pour offrir une expérience utilisateur complète et engageante. Ce projet met en œuvre les principes clés du développement web moderne, en combinant des fonctionnalités interactives avec un design minimaliste et intuitif. L'utilisateur peut créer des publications (texte ou photo), suivre d'autres comptes, commenter ou partager du contenu, le tout dans une interface fluide, optimisée pour tous les appareils. L objectif de ce projet est de démontrer la capacité à construire une architecture front-end solide, à gérer l état global avec efficacité (via des outils comme Redux ou Zustand), et à créer des interactions en temps réel grâce à une API performante (par exemple avec WebSocket ou Firebase). C'est un parfait exemple de projet full-stack évolutif orienté utilisateur.",
         image: "#",
         link: "https://tp-social-network-qx6b.vercel.app/",
         github: "https://github.com/Nicolas2027g/TP_Social_Network",
         technologies: ["Tailwind", "React", "Next.js", "MySQL"],
         features: [
-          "Interface graphique intuitive",
-          "IA basée sur l'algorithme minimax",
-          "Notation des parties aux formats standards",
-          "Possibilité de jouer contre l'ordinateur ou un autre joueur"
+          "Système de likes et de commentaires sur les posts",
+          "Flux de publication en temps réel",
+          "Authentification sécurisée (inscription / connexion)",
+          "Interface responsive et moderne"
         ]
       }
     ],
