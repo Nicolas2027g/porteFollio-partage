@@ -22,6 +22,7 @@ export default function SkillsSection() {
       name: "Frontend",
       skills: [
         { name: "React", level: 90, icon: "devicon-react-original colored" },
+        { name: "PHP", level: 90, icon: "devicon-php-plain colored" },
         { name: "HTML", level: 95, icon: "devicon-html5-plain colored" },
         { name: "CSS", level: 90, icon: "devicon-css3-plain colored" },
         { name: "Tailwind", level: 85, icon: "devicon-tailwindcss-plain colored" },
