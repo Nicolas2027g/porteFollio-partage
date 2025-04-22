@@ -129,8 +129,8 @@ export const themeConfig = {
       {
         id: 7,
         title: "Social Network",
-        description: "DPlateforme sociale moderne permettant aux utilisateurs de publier des messages, partager des photos, suivre d'autres membres et interagir dans un environnement fluide et responsive.",
-        longDescription: "SocialNetwork SocialConnect est une application web de réseau social conçue pour offrir une expérience utilisateur complète et engageante. Ce projet met en œuvre les principes clés du développement web moderne, en combinant des fonctionnalités interactives avec un design minimaliste et intuitif. L'utilisateur peut créer des publications (texte ou photo), suivre d'autres comptes, commenter ou partager du contenu, le tout dans une interface fluide, optimisée pour tous les appareils. L objectif de ce projet est de démontrer la capacité à construire une architecture front-end solide, à gérer l état global avec efficacité (via des outils comme Redux ou Zustand), et à créer des interactions en temps réel grâce à une API performante (par exemple avec WebSocket ou Firebase). C'est un parfait exemple de projet full-stack évolutif orienté utilisateur.",
+        description: "Plateforme sociale moderne permettant aux utilisateurs de publier des messages, partager des photos, suivre d'autres membres et interagir dans un environnement fluide et responsive.",
+        longDescription: "SocialNetwork est une application web de réseau social conçue pour offrir une expérience utilisateur complète et engageante. Ce projet met en œuvre les principes clés du développement web moderne, en combinant des fonctionnalités interactives avec un design minimaliste et intuitif. L'utilisateur peut créer des publications (texte ou photo), suivre d'autres comptes, commenter ou partager du contenu, le tout dans une interface fluide, optimisée pour tous les appareils. L objectif de ce projet est de démontrer la capacité à construire une architecture front-end solide, à gérer l état global avec efficacité (via des outils comme Redux ou Zustand), et à créer des interactions en temps réel grâce à une API performante (par exemple avec WebSocket ou Firebase). C'est un parfait exemple de projet full-stack évolutif orienté utilisateur.",
         image: "#",
         link: "https://tp-social-network-qx6b.vercel.app/",
         github: "https://github.com/Nicolas2027g/TP_Social_Network",
@@ -140,6 +140,21 @@ export const themeConfig = {
           "Flux de publication en temps réel",
           "Authentification sécurisée (inscription / connexion)",
           "Interface responsive et moderne"
+        ]
+      },
+      {
+        id: 8,
+        title: "Farm",
+        description: "Environnement de développement complet et portable, orchestré avec Docker pour un déploiement rapide et reproductible.",
+        longDescription: "Farm est un projet visant à simplifier le développement local et le déploiement en production grâce à Docker. Il encapsule les services essentiels (base de données, serveur web, API, etc.) dans des conteneurs légers, garantissant une configuration uniforme sur toutes les machines. Ce projet illustre la maîtrise de Docker, FastApi, et des bonnes pratiques DevOps pour créer un environnement isolé, cohérent et facile à maintenir.",
+        image: "#",
+        link: "#",
+        github: "https://github.com/Nicolas2027g/farm",
+        technologies: ["Python", "HTML", "Docker"],
+        features: [
+          "Déploiement rapide, reproductible et scalable",
+          "Conteneurisation complète d'une application web",
+          "Environnement prêt à l emploi en une seule commande"
         ]
       }
     ],
