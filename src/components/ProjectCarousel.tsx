@@ -1,19 +1,44 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
-export default function ProjectCarousel({ projects }) {
+// Interface pour définir la structure d'un projet
+interface ProjectFeature {
+  technologies: string[];
+  features?: string[];
+  id: number;
+  title: string;
+  description: string;
+  longDescription?: string;
+  image: string;
+  link: string;
+  github: string;
+}
+
+interface ProjectCarouselProps {
+  projects: ProjectFeature[];
+}
+
+export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
   const [current, setCurrent] = useState(0);
   const [autoplay, setAutoplay] = useState(true);
-  const autoplayRef = useRef(null);
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   
   const totalProjects = projects.length;
   
-  // Gérer le défilement automatique
+  const nextSlide = useCallback(() => {
+    setCurrent(prev => (prev === totalProjects - 1 ? 0 : prev + 1));
+  }, [totalProjects]);
+  
+  const prevSlide = useCallback(() => {
+    setCurrent(prev => (prev === 0 ? totalProjects - 1 : prev - 1));
+  }, [totalProjects]);
+  
   useEffect(() => {
     if (!autoplay) return;
     
@@ -26,23 +51,12 @@ export default function ProjectCarousel({ projects }) {
         clearTimeout(autoplayRef.current);
       }
     };
-  }, [current, autoplay]);
+  }, [current, autoplay, nextSlide]);
   
-  // Gérer la pause du défilement au survol
   const handleMouseEnter = () => setAutoplay(false);
   const handleMouseLeave = () => setAutoplay(true);
   
-  // Navigation dans le carrousel
-  const nextSlide = () => {
-    setCurrent(current === totalProjects - 1 ? 0 : current + 1);
-  };
-  
-  const prevSlide = () => {
-    setCurrent(current === 0 ? totalProjects - 1 : current - 1);
-  };
-  
-  // Sélectionner un slide spécifique
-  const goToSlide = (index) => {
+  const goToSlide = (index: number) => {
     setCurrent(index);
   };
 
@@ -62,11 +76,16 @@ export default function ProjectCarousel({ projects }) {
             transition={{ duration: 0.7 }}
           >
             <div className="relative h-full">
-              <img 
-                src={project.image} 
-                alt={project.title}
-                className="object-cover w-full h-full"
-              />
+              <div className="relative w-full h-full">
+                <Image 
+                  src={project.image} 
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                  priority={index === 0}
+                  className="object-cover"
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6 md:p-8">
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{project.title}</h3>
                 <p className="text-white/80 mb-4 max-w-lg line-clamp-2">{project.description}</p>

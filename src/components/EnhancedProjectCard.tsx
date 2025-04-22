@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, X, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 // Définir le type pour un projet
 interface ProjectFeature {
@@ -52,13 +53,16 @@ export default function EnhancedProjectCard({ project }: EnhancedProjectCardProp
           </Button>
         </div>
         
-        {/* Image du projet */}
         <div className="relative overflow-hidden aspect-video">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-          />
+          <div className="relative w-full h-full">
+            <Image
+              src={project.image === "#" ? "/images/Logo-noBG.png" : project.image}
+              alt={project.title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+            />
+          </div>
         </div>
         
         {/* Informations du projet */}
@@ -129,13 +133,16 @@ export default function EnhancedProjectCard({ project }: EnhancedProjectCardProp
                   <X className="h-4 w-4" />
                 </Button>
                 
-                {/* Image en header */}
                 <div className="relative h-60 md:h-80 rounded-t-lg overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={project.image === "#" ? "/images/Logo-noBG.png" : project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                      className="object-cover"
+                    />
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent bottom-0 h-20" />
                 </div>
                 

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { HomeIcon, BriefcaseIcon, MailIcon, MenuIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import Image from "next/image";
 
 // Menu Desktop
 function DesktopNavbar() {
@@ -92,16 +93,20 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <img 
-                  src="/images/Logo-noBG.png" 
-                  alt="Logo_Nico_Dev" 
-                  className="h-10 w-auto"
-                />
-              <span className="text-xl font-bold text-primary font-mono tracking-wider">
-                GUILLARD Nicolas
-              </span>
-            </Link>
+          <Link href="/" className="flex items-center space-x-2">
+            <div className="relative h-10 w-10">
+              <Image 
+                src="/images/Logo-noBG.png" 
+                alt="Logo_Nico_Dev" 
+                width={40}
+                height={40}
+                priority
+              />
+            </div>
+            <span className="text-xl font-bold text-primary font-mono tracking-wider">
+              GUILLARD Nicolas
+            </span>
+          </Link>
           </div>
           <DesktopNavbar />
           <MobileNavbar />

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from "framer-motion";
 import { Github, Linkedin, Instagram, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
@@ -90,11 +91,16 @@ export default function HomePage() {
             >
               <div className="relative w-full max-w-md">
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary/30 to-primary blur-xl opacity-50 -z-10" />
-                <img
-                  src="/images/presentation.jpg"
-                  alt="Photo de profil de GUILLARD Nicolas"
-                  className="rounded-3xl object-cover border shadow-lg aspect-square w-full"
-                />
+                <div className="relative w-full aspect-square">
+                  <Image
+                    src="/images/presentation.jpg"
+                    alt="Photo de profil de GUILLARD Nicolas"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 400px"
+                    priority
+                    className="rounded-3xl object-cover border shadow-lg"
+                  />
+                </div>
               </div>
             </motion.div>
           </div>
