@@ -1,12 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useState, MouseEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, X, ArrowRight } from "lucide-react";
 
-export default function EnhancedProjectCard({ project }) {
+// Définir le type pour un projet
+interface ProjectFeature {
+  technologies: string[];
+  features?: string[];
+  id: number;
+  title: string;
+  description: string;
+  longDescription?: string;
+  image: string;
+  link: string;
+  github: string;
+}
+
+interface EnhancedProjectCardProps {
+  project: ProjectFeature;
+}
+
+export default function EnhancedProjectCard({ project }: EnhancedProjectCardProps) {
   const [showDetails, setShowDetails] = useState(false);
   
   return (
@@ -70,7 +87,7 @@ export default function EnhancedProjectCard({ project }) {
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center gap-1"
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e: MouseEvent<HTMLAnchorElement>) => e.stopPropagation()}
             >
               <Github className="h-4 w-4" />
               <span>Code</span>
@@ -100,7 +117,7 @@ export default function EnhancedProjectCard({ project }) {
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ duration: 0.3 }}
                 className="bg-background rounded-lg shadow-xl w-full max-w-4xl relative z-50"
-                onClick={(e) => e.stopPropagation()}
+                onClick={(e: MouseEvent<HTMLDivElement>) => e.stopPropagation()}
               >
                 {/* Bouton de fermeture */}
                 <Button 

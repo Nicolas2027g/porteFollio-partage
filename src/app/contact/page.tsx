@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,26 +8,41 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Smartphone, MapPin, Send } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
+// Définir les types pour le formulaire
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+// Définir le type pour le statut du formulaire
+interface FormStatus {
+  isSubmitting: boolean;
+  isSubmitted: boolean;
+  error: string | null;
+}
+
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     subject: "",
     message: ""
   });
   
-  const [formStatus, setFormStatus] = useState({
+  const [formStatus, setFormStatus] = useState<FormStatus>({
     isSubmitting: false,
     isSubmitted: false,
     error: null
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus({ isSubmitting: true, isSubmitted: false, error: null });
     
@@ -66,7 +81,7 @@ export default function ContactPage() {
               Me Contacter
             </h1>
             <p className="text-muted-foreground max-w-[700px]">
-              N'hésitez pas à me contacter pour discuter de vos projets ou pour toute question.
+              N hésitez pas à me contacter pour discuter de vos projets ou pour toute question.
             </p>
           </motion.div>
 

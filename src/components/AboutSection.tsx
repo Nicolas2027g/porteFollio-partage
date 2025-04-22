@@ -76,17 +76,17 @@ export default function AboutSection() {
             <h2 className="text-3xl font-bold tracking-tighter">À propos de moi</h2>
             
             <p className="text-muted-foreground">
-              Étudiant passionné d'informatique en 3ème année à l'ESIEA, je me spécialise dans le développement web et la programmation. 
-              Je suis constamment en quête de nouvelles connaissances et d'expériences pour parfaire mes compétences techniques.
+              Étudiant passionné d informatique en 3ème année à l ESIEA, je me spécialise dans le développement web et la programmation. 
+              Je suis constamment en quête de nouvelles connaissances et d expériences pour parfaire mes compétences techniques.
             </p>
             
             <p className="text-muted-foreground">
-              Mon parcours académique m'a permis d'acquérir une solide base technique, que j'applique dans divers projets personnels et professionnels. 
-              Je m'intéresse particulièrement aux technologies web modernes, à la cybersécurité et au développement d'applications.
+              Mon parcours académique m a permis d acquérir une solide base technique, que j applique dans divers projets personnels et professionnels. 
+              Je m intéresse particulièrement aux technologies web modernes, à la cybersécurité et au développement d applications.
             </p>
             
             <div className="pt-4">
-              <h3 className="text-xl font-medium mb-3">Centres d'intérêt</h3>
+              <h3 className="text-xl font-medium mb-3">Centres d intérêt</h3>
               <ul className="grid grid-cols-2 gap-2">
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-primary" />
